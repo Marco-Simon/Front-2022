@@ -1,0 +1,210 @@
+body{
+    background-color: #abd2fa;
+    
+}
+p{
+    font-family: sans-serif;
+    font-size: 20px;
+    margin-left: 12%;
+    margin-right: 12%;
+    color: #023E8A;
+}
+label{
+   font-size: 18px; 
+   font-family: sans-serif;
+   opacity: .7;
+   margin: 25%;
+   text-align: center;
+   color: #023E8A;
+}
+input{
+    font-size: 18px;
+    /* width: 100%; */
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    box-sizing: border-box;
+}
+input:focus{
+    background-color: #ADE8F4;
+}
+input[type = text]{
+    margin-left: 33%;
+    margin-right: 33%;
+    width: 30%;
+}
+input[type = password], input[type = tel], input[type = email]{
+    margin-left: 33%;
+    margin-right: 33%;
+    width: 30%;
+}
+input[type = submit]{
+    /* margin-top: 10px; */
+    font-size: 100%; 
+}
+
+input[type = submit]:hover{
+    background-color: #48CAE4;
+}
+.submit{
+    margin-left: 33%;
+    margin-right: 33%;
+    width: 30%;
+}
+select{
+    font-family: Arial;
+    /* background-color: #48CAE4; */
+    width: 100%;
+    padding: 12px 20px;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+    border-radius: 6px;
+    font-size: 18px;
+}
+table{
+    width: 100%;
+    border-spacing: 0px;
+    
+}
+#trTable{
+    border-collapse: collapse;
+}
+#trTable td, #trTable th {
+    border: 1px solid #ddd;
+    padding: 8px;
+  }
+#trTable tr:nth-child(even){background-color: #f2f2f2;}
+#trTable tr:hover {background-color: #ddd;}
+#trTable th {
+    padding-top: 12px;
+    padding-bottom: 12px;
+    text-align: left;
+    /* background-color: #04AA6D;
+    color: white; */
+  }
+td{
+    font-size: 18px; 
+   font-family: sans-serif;
+   margin: 25%;
+   text-align: center;
+   color: #023E8A;
+}
+#cancel{
+    margin-top: 10px;
+    margin-top: 10px;
+    padding: 10px;
+    font-size: 18px; 
+    border: none;
+}
+.washTable{
+    /* width: 15%; */
+    font-size: 18px;
+    font-family: Arial;
+    color: #023E8A;
+}
+.dryTable{
+    /* width: 25%; */
+    font-size: 18px;
+    font-family: Arial;
+    color: #023E8A;
+}
+/* general navbar proporties. */
+nav{ 
+    color: #023E8A;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-size: 20px;
+    text-align: center;
+    
+}
+/* specific navbar properties. */
+/* nav1 is for login and registration pages */
+#nav1{
+    background-color: #7692FF;
+    padding: 20px;
+}
+/* nav2 is for account pages. */
+#nav2{
+    background-color: #7692FF;
+    padding: 20px;
+}
+.home{
+    /* margin-left: 12%; */
+    text-decoration: none;
+}
+.login{
+    margin-right: 12%;
+    margin-left: 12%;
+    text-decoration: none; 
+}
+/* ======= proporties inside the navbar. ============================= */
+#account{
+    margin-right: 10%;
+    margin-left: 10%;
+    text-decoration: none;
+}
+#payment{
+    margin-right: 10%;
+    text-decoration: none;
+}
+#contact{
+    margin-right: 10%;
+    text-decoration: none;
+}
+#manage{
+    margin-right: 10%;
+    text-decoration: none;
+}
+#about{
+    margin-right: 12%;
+    text-decoration: none;
+}
+/* =============================== */
+
+#rsvButton{
+    background-color: #abd2fa;
+    margin-left: 33%; 
+    margin-right: 33%;
+    width: 100%;
+    margin-top: 10px;
+    font-size: 20px; 
+    border: none;
+    color: #023E8A
+}
+#Pane{
+    /* background-color: cyan; */
+    margin-right: 5%;
+    margin-left: 5%;
+    height: fit-content;
+    width: 75%;
+}
+.Panes {
+    float: left;
+    clear: none;  
+}
+#RightPane{
+    background-color: cyan;
+    padding: 20px;
+    /* height: 180px; */
+    width: max-content;
+}
+#leftPane{
+    margin-left: 5%;
+    padding-top: 18px;
+    width: 15%;
+    height: 180px;
+    border: none;
+    
+}
+/* #tab2{
+    
+} */
+.tabs{
+    font-size: 20px; 
+    border:none ;
+    width: 100%;
+    height: 110px;
+    color: #023E8A; 
+}
+
+  
+
