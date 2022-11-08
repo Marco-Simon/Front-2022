@@ -1,8 +1,6 @@
 import React from 'react';
 import { useState, useEffect } from "react";
-import { Link, Navigate } from "react-router-dom";
 import Cookies from 'universal-cookie';
-import { useCookies } from "react-cookie";
 import AccountNavbar from './AccountNavbar';
 
 
