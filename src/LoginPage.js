@@ -65,7 +65,7 @@ const LoginPage = () => {
         <> 
         <HomeNavbar/>
         {error && <div> { error } </div>}
-        {isPending && <div id='loadSign'><p> Loading...</p> </div>}
+        {/* {isPending && <div id='loadSign'><p> Loading...</p> </div>} */}
         
         <form onSubmit={handleSubmit}>
             <br/>
