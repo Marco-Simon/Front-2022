@@ -225,7 +225,7 @@ const Account= () => {
         const type = tab;
             fetch("https://4bf4-80-246-130-214.eu.ngrok.io/getTable", {
                 method:'POST',
-                mode: 'no-cors',
+                // mode: 'no-cors',
                 headers: { "Content-Type" : "application/json"},
                 body: JSON.stringify({type})
             }) .then((res) =>{
