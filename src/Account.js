@@ -150,7 +150,7 @@ const Account= () => {
     useEffect(()=>{
         
         // Get all machines in the laundry room
-        fetch("/getMachines") .then((res) =>{
+        fetch("https://6ca3-80-246-130-193.eu.ngrok.io/getMachines") .then((res) =>{
                         if (!res.ok) {
                            throw Error("Data not found")
                         }

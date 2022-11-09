@@ -34,7 +34,7 @@ const  RegisterPage= () => {
         console.log();
         console.log(info);
 
-        fetch("/register", {
+        fetch("https://6ca3-80-246-130-193.eu.ngrok.io/register", {
             method:'POST',
             headers: { "Content-Type": "application/json"},
             body: JSON.stringify(info)
