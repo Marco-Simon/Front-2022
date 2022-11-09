@@ -11,8 +11,8 @@ const AccountNavbar = () => {
             <nav id="nav2">
                 <Link className="home" to="/Logout"> Log Out </Link>
                 <Link id="account" to="/Account"> Account </Link>
-                <Link id="payment" to="/Payment"> Payment </Link>
-                <Link id="contact" to="/Contact"> Contact </Link>
+                {/* <Link id="payment" to="/Payment"> Payment </Link>
+                <Link id="contact" to="/Contact"> Contact </Link> */}
                 {cookies.get('isManager') && <Link id="manage" to="/Manage"> Manage </Link> }
             </nav>
             
