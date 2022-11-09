@@ -6,7 +6,9 @@ const useFetch = (url) => {
     const[data, setData]= useState('')
 
     useEffect(() =>{
-      fetch(url).then(res =>{
+      fetch(url,{
+        mode: 'no-cors' // 'cors' by default
+      }).then(res =>{
             if (!res.ok) {
                 throw Error("Data not found")
             }
