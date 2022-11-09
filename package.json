@@ -2,7 +2,7 @@
   "name": "my-app",
   "version": "0.1.0",
   "private": true,
-  "proxy": "https://2417-80-246-130-214.eu.ngrok.io/",
+  "proxy": "https://4bf4-80-246-130-214.eu.ngrok.io/",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.4",
     "@testing-library/react": "^13.2.0",
