@@ -112,7 +112,7 @@ const  RegisterPage= () => {
                 type= "tel" 
                 id='phoneNumber' 
                 required
-                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+                pattern="[0-9]{9}"
                 value={phoneNumber}
                 onChange= {(e) => setPhoneNumber(e.target.value)}/>
             <br/>
