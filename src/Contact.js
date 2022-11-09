@@ -7,7 +7,7 @@ import AccountNavbar from './AccountNavbar';
 const Contact = () => {
     const cookies = new Cookies();
     //NOTE: MUST ENTER URL AS PARAMETER FOR THE 'useFetch'!!!
-    const { data, isPending, Error } =useFetch('/getContact')
+    const { data, isPending, Error } =useFetch('https://2417-80-246-130-214.eu.ngrok.io/getContact')
     
     var tableList =  
     <> <th className='dryTable'>Name:</th>

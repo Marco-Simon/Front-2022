@@ -98,7 +98,7 @@ const Account= () => {
         let machineC = value['machine'];
         let type = tab;
         let info = {timeC, dateC, machineC, type}
-        fetch("/delete", {
+        fetch("https://2417-80-246-130-214.eu.ngrok.io/delete", {
             method:'POST',
             headers: { "Content-Type" : "application/json"},
             body: JSON.stringify(info)
@@ -150,7 +150,7 @@ const Account= () => {
     useEffect(()=>{
         
         // Get all machines in the laundry room
-        fetch("https://6ca3-80-246-130-193.eu.ngrok.io/getMachines") .then((res) =>{
+        fetch("https://2417-80-246-130-214.eu.ngrok.io/getMachines") .then((res) =>{
                         if (!res.ok) {
                            throw Error("Data not found")
                         }
@@ -180,7 +180,7 @@ const Account= () => {
         for (let i = 0; i < availMachines.length; i++) {
             const machineI = i;
             const info = {time, machineI, date, type}
-            fetch("/isAvailable", {
+            fetch("https://2417-80-246-130-214.eu.ngrok.io/isAvailable", {
                 method:'POST',
                 headers: { "Content-Type": "application/json"},
                 body: JSON.stringify(info)
@@ -219,7 +219,7 @@ const Account= () => {
     //this gets the table of reservations.        
     useEffect(()=> {
         const type = tab;
-            fetch("/getTable", {
+            fetch("https://2417-80-246-130-214.eu.ngrok.io/getTable", {
                 method:'POST',
                 headers: { "Content-Type" : "application/json"},
                 body: JSON.stringify({type})
@@ -249,7 +249,7 @@ const Account= () => {
         var info = {time, machine, type, date };
         console.log(info);
        
-        fetch("/index", {
+        fetch("https://2417-80-246-130-214.eu.ngrok.io/index", {
             method:'POST',
             headers: { "Content-Type" : "application/json"},
             body: JSON.stringify(info)

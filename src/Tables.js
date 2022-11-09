@@ -62,7 +62,7 @@ const Tables = (x) => {
         let machineC = value['machine'];
         let type = tab;
         let info = {timeC, dateC, machineC, type}
-        fetch("/delete", {
+        fetch("https://2417-80-246-130-214.eu.ngrok.io/delete", {
             method:'POST',
             headers: { "Content-Type" : "application/json"},
             body: JSON.stringify(info)
@@ -86,7 +86,7 @@ const Tables = (x) => {
     useEffect(()=> {
     const type = tab;
     
-        fetch("/getTable", {
+        fetch("https://2417-80-246-130-214.eu.ngrok.io/getTable", {
             method:'POST',
             headers: { "Content-Type" : "application/json"},
             body: JSON.stringify({type})
