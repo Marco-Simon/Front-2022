@@ -151,7 +151,7 @@ const Account= () => {
         
         // Get all machines in the laundry room
         fetch("https://4bf4-80-246-130-214.eu.ngrok.io/getMachines",{
-            method:'POST',
+            method:'GET',
             mode: 'no-cors' // 'cors' by default
           }) .then((res) =>{
                         if (!res.ok) {
