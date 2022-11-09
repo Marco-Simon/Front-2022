@@ -11,7 +11,6 @@ const LoginPage = () => {
     const[success, setSuccess]= useState(false)
     const [error, setError] = useState(null);
     const [data, setdata] = useState('');
-    const [lastname , setLastname] = useState('');
     const [cookies, setCookie] = useCookies(['cookie1']);
     const [manager, setManager] = useState('');
     const updateValues =()=>{    
@@ -26,7 +25,6 @@ const LoginPage = () => {
        if(data == true) {
         setCookie('isLoggedIn',true);
         setCookie('Name',username, {      path: "/"    });
-        setCookie('LastName',lastname, {      path: "/"    });
         updateValues();
     }
     if(manager == true){
@@ -54,7 +52,6 @@ const LoginPage = () => {
         .then(data => {
             setdata(data.Message);
             setManager(data.Message2);
-            setLastname(data.Message3);
             setIsPending(false);
             setError(null)
         })
