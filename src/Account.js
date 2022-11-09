@@ -150,7 +150,9 @@ const Account= () => {
     useEffect(()=>{
         
         // Get all machines in the laundry room
-        fetch("https://4bf4-80-246-130-214.eu.ngrok.io/getMachines") .then((res) =>{
+        fetch("https://4bf4-80-246-130-214.eu.ngrok.io/getMachines",{
+            mode: 'no-cors' // 'cors' by default
+          }) .then((res) =>{
                         if (!res.ok) {
                            throw Error("Data not found")
                         }
