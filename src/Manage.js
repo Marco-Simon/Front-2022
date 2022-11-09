@@ -8,7 +8,7 @@ import useFetch from './useFetch';
 const Manage = () => {
     // onSubmit={handleSubmitfile}
     const cookies = new Cookies();
-    const { data, isPending, Error } =useFetch(' https://721d-80-246-130-214.eu.ngrok.io/getContact')
+    const { data, isPending, Error } =useFetch('https://4bf4-80-246-130-214.eu.ngrok.io/getContact')
     
     const [selectedFile, setSelectedFile] = useState();
 	const [isFilePicked, setIsFilePicked] = useState(false);
@@ -25,7 +25,7 @@ const Manage = () => {
         formData.append('File', selectedFile);
        
        
-        fetch(" https://721d-80-246-130-214.eu.ngrok.io/scanningImg", {
+        fetch("https://4bf4-80-246-130-214.eu.ngrok.io/scanningImg", {
             method:'POST',
             // headers: { "Content-Type" : "application/json"},
             body: formData

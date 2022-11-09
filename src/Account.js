@@ -98,7 +98,7 @@ const Account= () => {
         let machineC = value['machine'];
         let type = tab;
         let info = {timeC, dateC, machineC, type}
-        fetch(" https://721d-80-246-130-214.eu.ngrok.io/delete", {
+        fetch("https://4bf4-80-246-130-214.eu.ngrok.io/delete", {
             method:'POST',
             headers: { "Content-Type" : "application/json"},
             body: JSON.stringify(info)
@@ -150,7 +150,7 @@ const Account= () => {
     useEffect(()=>{
         
         // Get all machines in the laundry room
-        fetch(" https://721d-80-246-130-214.eu.ngrok.io/getMachines") .then((res) =>{
+        fetch("https://4bf4-80-246-130-214.eu.ngrok.io/getMachines") .then((res) =>{
                         if (!res.ok) {
                            throw Error("Data not found")
                         }
@@ -180,7 +180,7 @@ const Account= () => {
         for (let i = 0; i < availMachines.length; i++) {
             const machineI = i;
             const info = {time, machineI, date, type}
-            fetch(" https://721d-80-246-130-214.eu.ngrok.io/isAvailable", {
+            fetch("https://4bf4-80-246-130-214.eu.ngrok.io/isAvailable", {
                 method:'POST',
                 headers: { "Content-Type": "application/json"},
                 body: JSON.stringify(info)
@@ -219,7 +219,7 @@ const Account= () => {
     //this gets the table of reservations.        
     useEffect(()=> {
         const type = tab;
-            fetch(" https://721d-80-246-130-214.eu.ngrok.io/getTable", {
+            fetch("https://4bf4-80-246-130-214.eu.ngrok.io/getTable", {
                 method:'POST',
                 headers: { "Content-Type" : "application/json"},
                 body: JSON.stringify({type})
@@ -249,7 +249,7 @@ const Account= () => {
         var info = {time, machine, type, date };
         console.log(info);
        
-        fetch(" https://721d-80-246-130-214.eu.ngrok.io/index", {
+        fetch("https://4bf4-80-246-130-214.eu.ngrok.io/index", {
             method:'POST',
             headers: { "Content-Type" : "application/json"},
             body: JSON.stringify(info)
