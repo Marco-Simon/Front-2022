@@ -18,6 +18,7 @@ import AccountNavbar from './AccountNavbar';
 // =============================================================================
 const Account= () => {
     const today = new Date();
+     
     // variables 
     const [time, setTime] = useState("");
     const [machine, setMachine] = useState("");
@@ -32,6 +33,7 @@ const Account= () => {
     const [error, setError] = useState(null);
     const[success, setSuccess]= useState(false)
     const [auth, setAuth] = useState(false)
+    const [cookies, setCookie, removeCookie] = useCookies();
     //arrays that hold the machines and the table.
     const [availMachines, setAvaillMachine] = useState([])
     const [allMachines, setAllMachines] = useState([])
@@ -40,8 +42,9 @@ const Account= () => {
     // const [cookies, setCookie] = useCookies();
     const [data, setdata] = useState({
 		displayMessage: ""});
-    const cookies = new Cookies();
-
+    // const cookies = new Cookies();
+        const NAME = cookies('Name')
+        console.log(NAME);
     function printMachines (array) {
         //this function converts an array of object to an array.
         const rtn = [];
