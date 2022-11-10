@@ -146,11 +146,11 @@ const Account= () => {
     }, [tableArray])
     useEffect(()=>{setAvaillMachine(printMachines(allMachines));}, [allMachines])
     useEffect(()=>{
-        
+        setIsPending(true);
         // Get all machines in the laundry room
         fetch("https://199a-5-28-186-8.eu.ngrok.io/getMachines",{
             method:'POST',
-            mode: 'no-cors' // 'cors' by default
+            // mode: 'no-cors' // 'cors' by default
           }) .then((res) =>{
                         if (!res.ok) {
                            throw Error("Data not found")
