@@ -5,10 +5,37 @@ import useFetch from './useFetch';
 import Cookies from 'universal-cookie';
 import AccountNavbar from './AccountNavbar';
 const Contact = () => {
+    const[isPending, setIsPending] = useState(true);
+    const [error, setError] = useState(null);
+    const [data, setdata] = useState([]);
+
     const cookies = new Cookies();
-    //NOTE: MUST ENTER URL AS PARAMETER FOR THE 'useFetch'!!!
-    const { data, isPending, Error } =useFetch('https://4bf4-80-246-130-214.eu.ngrok.io/getContact')
+    const USERNAME = cookies.get('Name');
+    const LASTNAME = cookies.get('LastName'); 
     
+    useEffect(()=> {
+        
+            fetch("https://199a-5-28-186-8.eu.ngrok.io/getContact", {
+                method:'POST',
+                headers: { "Content-Type" : "application/json"},
+                body: JSON.stringify({USERNAME, LASTNAME})
+            }) .then((res) =>{
+                            if (!res.ok) {
+                               throw Error("Data not found")
+                            }
+                            return res.json();
+                        })
+            .then(data => {
+                setdata(data.Message); 
+                setIsPending(false);
+                setError(null);
+            })
+            .catch(err => {
+                setIsPending(false)
+                setError(err.message)
+            })
+    
+        },[])
     var tableList =  
     <> <th className='dryTable'>Name:</th>
     <th className='dryTable'>Lastname:</th>

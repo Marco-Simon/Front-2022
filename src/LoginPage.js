@@ -13,6 +13,8 @@ const LoginPage = () => {
     const [data, setdata] = useState('');
     const [cookies, setCookie] = useCookies(['cookie1']);
     const [manager, setManager] = useState('');
+    const [lastname, setlastname] = useState('');
+    
     const updateValues =()=>{    
         console.log("in function statement");
         setSuccess(true);
@@ -25,6 +27,7 @@ const LoginPage = () => {
        if(data == true) {
         setCookie('isLoggedIn',true);
         setCookie('Name',username, {      path: "/"    });
+        setCookie('LastName',lastname, {      path: "/"    });
         updateValues();
     }
     if(manager == true){
@@ -39,7 +42,7 @@ const LoginPage = () => {
         console.log(info);
         
         // Send login info to the server. The response will be saved in the data variable. 
-        fetch("https://4bf4-80-246-130-214.eu.ngrok.io/login", {
+        fetch("https://199a-5-28-186-8.eu.ngrok.io/login", {
             method:'POST',
             headers: { "Content-Type": "application/json"},
             body: JSON.stringify(info)
@@ -52,6 +55,7 @@ const LoginPage = () => {
         .then(data => {
             setdata(data.Message);
             setManager(data.Message2);
+            setlastname(data.Message3)
             setIsPending(false);
             setError(null)
         })

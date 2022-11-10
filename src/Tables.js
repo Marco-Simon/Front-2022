@@ -1,5 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from "react";
+import Cookies from 'universal-cookie';
+
 const Tables = (x) => {
     const [tableWash, settableWash] = useState([]);
     const [tableDry, settableDry] = useState([]);
@@ -9,6 +11,9 @@ const Tables = (x) => {
     const [error, setError] = useState(null);
     const[success, setSuccess]= useState(false);
     const [data, setdata] = useState([]);
+    const cookies = new Cookies();
+    const USERNAME = cookies.get('Name');
+    const LASTNAME = cookies.get('LastName'); 
 
     function updateArray (array, index) {
         //this function filters an array.
@@ -61,8 +66,8 @@ const Tables = (x) => {
         let dateC = value['date'];
         let machineC = value['machine'];
         let type = tab;
-        let info = {timeC, dateC, machineC, type}
-        fetch("https://4bf4-80-246-130-214.eu.ngrok.io/delete", {
+        let info = {timeC, dateC, machineC, type, USERNAME, LASTNAME}
+        fetch("https://199a-5-28-186-8.eu.ngrok.io/delete", {
             method:'POST',
             headers: { "Content-Type" : "application/json"},
             body: JSON.stringify(info)
@@ -86,10 +91,10 @@ const Tables = (x) => {
     useEffect(()=> {
     const type = tab;
     
-        fetch("https://4bf4-80-246-130-214.eu.ngrok.io/getTable", {
+        fetch("https://199a-5-28-186-8.eu.ngrok.io/getTable", {
             method:'POST',
             headers: { "Content-Type" : "application/json"},
-            body: JSON.stringify({type})
+            body: JSON.stringify({type, USERNAME, LASTNAME})
         }) .then((res) =>{
                         if (!res.ok) {
                            throw Error("Data not found")

@@ -5,10 +5,15 @@ import { useCookies } from "react-cookie";
 import Cookies from 'universal-cookie';
 import AccountNavbar from './AccountNavbar';
 import useFetch from './useFetch';
+
+/**
+ * TODO: FIX BUGS FOR THE FUNCTION TO CHOOSE A FELLOW USER AS MANAGER
+ * 
+ */
 const Manage = () => {
     // onSubmit={handleSubmitfile}
     const cookies = new Cookies();
-    const { data, isPending, Error } =useFetch('https://4bf4-80-246-130-214.eu.ngrok.io/getContact')
+    // const { data, isPending, Error } =useFetch('/getContact')
     
     const [selectedFile, setSelectedFile] = useState();
 	const [isFilePicked, setIsFilePicked] = useState(false);
@@ -25,7 +30,7 @@ const Manage = () => {
         formData.append('File', selectedFile);
        
        
-        fetch("https://4bf4-80-246-130-214.eu.ngrok.io/scanningImg", {
+        fetch("/scanningImg", {
             method:'POST',
             // headers: { "Content-Type" : "application/json"},
             body: formData

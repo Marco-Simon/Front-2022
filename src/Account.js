@@ -2,8 +2,6 @@ import React from 'react';
 import { useState, useEffect } from "react";
 import Cookies from 'universal-cookie';
 import AccountNavbar from './AccountNavbar';
-
-
 // =============================================================================
 /*TODO:  Use shmuels design. */
 /*TODO: Add limits to date and time. */
@@ -26,7 +24,6 @@ const Account= () => {
     const [rsv, setRsv] = useState(true)
     const [tableWash, settableWash] = useState([])
     const [tableDry, settableDry] = useState([])
-
     // techinical variables 
     const[isPending, setIsPending] = useState(true);
     const [error, setError] = useState(null);
@@ -39,11 +36,12 @@ const Account= () => {
     
     // const [cookies, setCookie] = useCookies();
     const [data, setdata] = useState({
-		displayMessage: ""});
+        displayMessage: ""});
     const cookies = new Cookies();
-
-    function printMachines (array) {
-        //this function converts an array of object to an array.
+    const USERNAME = cookies.get('Name')
+    const LASTNAME = cookies.get('LastName')    
+        function printMachines (array) {
+            //this function converts an array of object to an array.
         const rtn = [];
             // console.log(array.length);
             for (let i = 0, j = 0; i < array.length; i++) { 
@@ -97,8 +95,8 @@ const Account= () => {
         let dateC = value['date'];
         let machineC = value['machine'];
         let type = tab;
-        let info = {timeC, dateC, machineC, type}
-        fetch("https://4bf4-80-246-130-214.eu.ngrok.io/delete", {
+        let info = {timeC, dateC, machineC, type, USERNAME, LASTNAME}
+        fetch("https://199a-5-28-186-8.eu.ngrok.io/delete", {
             method:'POST',
             headers: { "Content-Type" : "application/json"},
             body: JSON.stringify(info)
@@ -121,9 +119,9 @@ const Account= () => {
     }
 
     var tableList =  
-    <> <th className='dryTable'>Machine:</th>
+    <> <th className='dryTable'>Date:</th>
+    <th className='dryTable'>Machine:</th>
     <th className='dryTable'>Time:</th>
-    <th className='dryTable'>Date:</th>
     <th className='dryTable'>Cancel:</th></>;
     // if (tab == 'wash') {
     //     tableList = <><th className='washTable'>Machine:</th>
@@ -150,7 +148,7 @@ const Account= () => {
     useEffect(()=>{
         
         // Get all machines in the laundry room
-        fetch("https://4bf4-80-246-130-214.eu.ngrok.io/getMachines",{
+        fetch("https://199a-5-28-186-8.eu.ngrok.io/getMachines",{
             method:'POST',
             mode: 'no-cors' // 'cors' by default
           }) .then((res) =>{
@@ -179,31 +177,33 @@ const Account= () => {
 
         setTime(today.getHours() + ':' + today.getMinutes());
         setDate(today.getFullYear() + '-' + (today.getMonth() + 1) + '-' + today.getDate())
-        
-        for (let i = 0; i < availMachines.length; i++) {
-            const machineI = i;
-            const info = {time, machineI, date, type}
-            fetch("https://4bf4-80-246-130-214.eu.ngrok.io/isAvailable", {
-                method:'POST',
-                mode: 'no-cors',
-                headers: { "Content-Type": "application/json"},
-                body: JSON.stringify(info)
-            }) .then((res) =>{
-                if (!res.ok) {
-                    throw Error("Data not found")
-                }
-                return res.json();
-            })
-            .then(data => {
-                if( data.Message == true){
-                    console.log(machineI);
-                }
-            })
-            .catch(err => {
-                setIsPending(false)
-                setError(err.message)
-            });
-        }
+
+        // The idea is to present the user with all currently available machines.
+
+        // for (let i = 0; i < availMachines.length; i++) {
+        //     const machineI = i;
+        //     const info = {time, machineI, date, type}
+        //     fetch("/isAvailable", {
+        //         method:'POST',
+        //         mode: 'no-cors',
+        //         headers: { "Content-Type": "application/json"},
+        //         body: JSON.stringify(info)
+        //     }) .then((res) =>{
+        //         if (!res.ok) {
+        //             throw Error("Data not found")
+        //         }
+        //         return res.json();
+        //     })
+        //     .then(data => {
+        //         if( data.Message == true){
+        //             console.log(machineI);
+        //         }
+        //     })
+        //     .catch(err => {
+        //         setIsPending(false)
+        //         setError(err.message)
+        //     });
+        // }
         
        
  // this code will do something every minute.
@@ -223,11 +223,11 @@ const Account= () => {
     //this gets the table of reservations.        
     useEffect(()=> {
         const type = tab;
-            fetch("https://4bf4-80-246-130-214.eu.ngrok.io/getTable", {
+            fetch("https://199a-5-28-186-8.eu.ngrok.io/getTable", {
                 method:'POST',
                 // mode: 'no-cors',
                 headers: { "Content-Type" : "application/json"},
-                body: JSON.stringify({type})
+                body: JSON.stringify({type, USERNAME, LASTNAME})
             }) .then((res) =>{
                             if (!res.ok) {
                                throw Error("Data not found")
@@ -251,10 +251,10 @@ const Account= () => {
         e.preventDefault();
         const type = tab;
         // this is what will be sent to the server in json format.
-        var info = {time, machine, type, date };
+        var info = {time, machine, type, date, USERNAME, LASTNAME };
         console.log(info);
        
-        fetch("https://4bf4-80-246-130-214.eu.ngrok.io/index", {
+        fetch("https://199a-5-28-186-8.eu.ngrok.io/index", {
             method:'POST',
             mode: 'no-cors',
             headers: { "Content-Type" : "application/json"},
