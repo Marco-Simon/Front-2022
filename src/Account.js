@@ -256,7 +256,7 @@ const Account= () => {
        
         fetch("https://199a-5-28-186-8.eu.ngrok.io/index", {
             method:'POST',
-            mode: 'no-cors',
+            // mode: 'no-cors',
             headers: { "Content-Type" : "application/json"},
             body: JSON.stringify(info)
         }) .then((res) =>{
