@@ -15,6 +15,7 @@ const Logout = () => {
     } 
     })
     useEffect(()=>{
+        console.log('success = ', success);
         if(success == true) {
         setCookie('isLoggedIn', false); 
         removeCookie('isManager');

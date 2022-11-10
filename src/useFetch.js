@@ -7,7 +7,8 @@ const useFetch = (url) => {
 
     useEffect(() =>{
       fetch(url,{
-        mode: 'no-cors' // 'cors' by default
+        method:'POST',
+        // mode: 'no-cors' // 'cors' by default
       }).then(res =>{
             if (!res.ok) {
                 throw Error("Data not found")
