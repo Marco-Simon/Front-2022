@@ -37,9 +37,9 @@ const Contact = () => {
     
         },[])
     var tableList =  
-    <> <th className='dryTable'>Name:</th>
+    <> <th className='dryTable'>Email:</th>
     <th className='dryTable'>Lastname:</th>
-    <th className='dryTable'>Email:</th>
+    <th className='dryTable'>Name:</th>
     <th className='dryTable'>Phone Number:</th></>;
 
     let trList = data.length > 0
