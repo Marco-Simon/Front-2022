@@ -30,7 +30,7 @@ const Manage = () => {
         formData.append('File', selectedFile);
        
        
-        fetch("https://199a-5-28-186-8.eu.ngrok.io/scanningImg", {
+        fetch("https://de7e-5-28-186-203.eu.ngrok.io/scanningImg", {
             method:'POST',
             // headers: { "Content-Type" : "application/json"},
             body: formData

@@ -42,7 +42,7 @@ const LoginPage = () => {
         console.log(info);
         
         // Send login info to the server. The response will be saved in the data variable. 
-        fetch("https://199a-5-28-186-8.eu.ngrok.io/login", {
+        fetch("https://de7e-5-28-186-203.eu.ngrok.io/login", {
             method:'POST',
             headers: { "Content-Type": "application/json"},
             body: JSON.stringify(info)

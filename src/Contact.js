@@ -15,7 +15,7 @@ const Contact = () => {
     
     useEffect(()=> {
         
-            fetch("https://199a-5-28-186-8.eu.ngrok.io/getContact", {
+            fetch("https://de7e-5-28-186-203.eu.ngrok.io/getContact", {
                 method:'POST',
                 headers: { "Content-Type" : "application/json"},
                 body: JSON.stringify({USERNAME, LASTNAME})

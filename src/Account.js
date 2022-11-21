@@ -96,7 +96,7 @@ const Account= () => {
         let machineC = value['machine'];
         let type = tab;
         let info = {timeC, dateC, machineC, type, USERNAME, LASTNAME}
-        fetch("https://199a-5-28-186-8.eu.ngrok.io/delete", {
+        fetch("https://de7e-5-28-186-203.eu.ngrok.io/delete", {
             method:'POST',
             headers: { "Content-Type" : "application/json"},
             body: JSON.stringify(info)
@@ -148,7 +148,7 @@ const Account= () => {
     useEffect(()=>{
         setIsPending(true);
         // Get all machines in the laundry room
-        fetch("https://199a-5-28-186-8.eu.ngrok.io/getMachines",{
+        fetch("https://de7e-5-28-186-203.eu.ngrok.io/getMachines",{
             method:'POST',
             // mode: 'no-cors' // 'cors' by default
           }) .then((res) =>{
@@ -223,7 +223,7 @@ const Account= () => {
     //this gets the table of reservations.        
     useEffect(()=> {
         const type = tab;
-            fetch("https://199a-5-28-186-8.eu.ngrok.io/getTable", {
+            fetch("https://de7e-5-28-186-203.eu.ngrok.io/getTable", {
                 method:'POST',
                 // mode: 'no-cors',
                 headers: { "Content-Type" : "application/json"},
@@ -254,7 +254,7 @@ const Account= () => {
         var info = {time, machine, type, date, USERNAME, LASTNAME };
         console.log(info);
        
-        fetch("https://199a-5-28-186-8.eu.ngrok.io/index", {
+        fetch("https://de7e-5-28-186-203.eu.ngrok.io/index", {
             method:'POST',
             // mode: 'no-cors',
             headers: { "Content-Type" : "application/json"},

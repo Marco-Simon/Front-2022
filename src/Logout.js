@@ -6,7 +6,7 @@ import useFetch from './useFetch';
 const Logout = () => {
     const[success, setSuccess]= useState(false)
     //NOTE: MUST ENTER URL AS PARAMETER FOR THE 'useFetch'!!!
-    const { data, isPending, Error } =useFetch('https://199a-5-28-186-8.eu.ngrok.io/logout');
+    const { data, isPending, Error } =useFetch('https://de7e-5-28-186-203.eu.ngrok.io/logout');
     const [cookies, setCookie, removeCookie] = useCookies();
     useEffect(()=>{
         if (data == true){           
